@@ -972,41 +972,41 @@ class ServiceCardShimmer extends StatelessWidget {
           ),
         ],
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(12),
+      child: const Padding(
+        padding: EdgeInsets.all(12),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const ShimmerWidget(
+            ShimmerWidget(
               width: 100,
               height: 100,
               borderRadius: BorderRadius.all(Radius.circular(12)),
             ),
-            const SizedBox(width: 14),
+            SizedBox(width: 14),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const ShimmerWidget(
+                  ShimmerWidget(
                     width: 60,
                     height: 10,
                     borderRadius: BorderRadius.all(Radius.circular(3)),
                   ),
-                  const SizedBox(height: 8),
-                  const ShimmerWidget(
+                  SizedBox(height: 8),
+                  ShimmerWidget(
                     width: 160,
                     height: 16,
                     borderRadius: BorderRadius.all(Radius.circular(4)),
                   ),
-                  const SizedBox(height: 6),
-                  const ShimmerWidget(
+                  SizedBox(height: 6),
+                  ShimmerWidget(
                     width: 100,
                     height: 14,
                     borderRadius: BorderRadius.all(Radius.circular(4)),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   Row(
-                    children: const [
+                    children: [
                       ShimmerWidget(
                         width: 14,
                         height: 14,
@@ -1020,10 +1020,10 @@ class ServiceCardShimmer extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 14),
+                  SizedBox(height: 14),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
+                    children: [
                       ShimmerWidget(
                         width: 60,
                         height: 18,

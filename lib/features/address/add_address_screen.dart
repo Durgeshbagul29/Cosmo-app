@@ -136,7 +136,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                 title: const Text('Make this my default address',
                     style:
                         TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
-                activeColor: AppTheme.primary,
+                activeTrackColor: AppTheme.primary,
                 value: _isDefault,
                 onChanged: (val) => setState(() => _isDefault = val),
               ),

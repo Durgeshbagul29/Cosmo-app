@@ -568,10 +568,6 @@ class _EnrollmentDetailScreenState extends State<EnrollmentDetailScreen> {
     );
   }
 
-
-
-
-
   Widget _buildCertificateCard(Enrollment enrollment) {
     final bool isUnlocked = enrollment.completedAt != null &&
         enrollment.completedAt!.isNotEmpty &&

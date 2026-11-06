@@ -177,7 +177,7 @@ class _PrivacySecurityScreenState extends State<PrivacySecurityScreen> {
       trailing: Switch.adaptive(
         value: value,
         onChanged: onChanged,
-        activeColor: AppTheme.primary,
+        activeTrackColor: AppTheme.primary,
       ),
     );
   }
