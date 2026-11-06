@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:saris_cosmo_center/core/network/api_endpoints.dart';
 
@@ -71,8 +72,8 @@ class AppointmentService {
       if (staffMemberId != null) {
         urlString += '&staff_member_id=$staffMemberId';
       }
-      print('DEBUG [getAvailableSlots] Request URL: $urlString');
-      print('DEBUG [getAvailableSlots] Auth Token: $token');
+      debugPrint('DEBUG [getAvailableSlots] Request URL: $urlString');
+      debugPrint('DEBUG [getAvailableSlots] Auth Token: $token');
       
       final response = await http.get(
         Uri.parse(urlString),
@@ -83,12 +84,12 @@ class AppointmentService {
         },
       );
       
-      print('DEBUG [getAvailableSlots] Response Code: ${response.statusCode}');
-      print('DEBUG [getAvailableSlots] Response Body: ${response.body}');
+      debugPrint('DEBUG [getAvailableSlots] Response Code: ${response.statusCode}');
+      debugPrint('DEBUG [getAvailableSlots] Response Body: ${response.body}');
       
       return _handleResponse(response);
     } catch (e) {
-      print('DEBUG [getAvailableSlots] Error caught: $e');
+      debugPrint('DEBUG [getAvailableSlots] Error caught: $e');
       if (e.toString().startsWith('Exception: ')) rethrow;
       throw Exception('Failed to fetch available slots: $e');
     }

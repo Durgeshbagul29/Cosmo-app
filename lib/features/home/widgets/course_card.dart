@@ -102,19 +102,19 @@ class CourseCardShimmer extends StatelessWidget {
               offset: const Offset(0, 4))
         ],
       ),
-      child: Column(
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const ShimmerWidget(
+          ShimmerWidget(
             width: double.infinity,
             height: 120,
             borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
           ),
           Padding(
-            padding: const EdgeInsets.all(12),
+            padding: EdgeInsets.all(12),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 ShimmerWidget(
                   width: 160,
                   height: 14,

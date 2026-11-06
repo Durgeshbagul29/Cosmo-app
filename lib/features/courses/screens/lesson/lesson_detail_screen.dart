@@ -553,9 +553,9 @@ class _LessonDetailScreenState extends State<LessonDetailScreen> {
   Widget _buildBottomActionBar() {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: AppTheme.surface,
-        border: const Border(
+        border: Border(
           top: BorderSide(color: AppTheme.divider),
         ),
       ),

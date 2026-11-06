@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:saris_cosmo_center/core/models/models.dart';
@@ -20,7 +21,7 @@ class ProductController extends GetxController {
       final data = await json.decode(response) as List<dynamic>;
       products.value = data.map((x) => Product.fromJson(x)).toList();
     } catch (e) {
-      print("Error loading products: $e");
+      debugPrint("Error loading products: $e");
     } finally {
       isLoading(false);
     }

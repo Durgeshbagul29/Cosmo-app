@@ -79,8 +79,8 @@ class ExpertChipShimmer extends StatelessWidget {
     return Container(
       width: 100,
       margin: const EdgeInsets.only(right: 16),
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           ShimmerWidget(
             width: 76,
             height: 76,

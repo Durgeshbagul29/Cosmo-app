@@ -121,7 +121,7 @@ class ExpertsScreen extends StatelessWidget {
                           ),
                     Container(
                       padding: const EdgeInsets.all(1.5),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: AppTheme.surface,
                         shape: BoxShape.circle,
                       ),

@@ -1470,9 +1470,9 @@ class _RescheduleAppointmentSheetState extends State<_RescheduleAppointmentSheet
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           'Reschedule Appointment',
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             color: AppTheme.textDark,

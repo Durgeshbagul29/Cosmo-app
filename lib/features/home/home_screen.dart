@@ -239,8 +239,9 @@ class HomeScreen extends StatelessWidget {
                         ),
                         Obx(() {
                           final cartController = Get.find<CartController>();
-                          if (cartController.itemCount == 0)
+                          if (cartController.itemCount == 0) {
                             return const SizedBox.shrink();
+                          }
                           return Positioned(
                             right: 0,
                             top: 0,
