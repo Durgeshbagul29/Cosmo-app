@@ -1,6 +1,7 @@
-# 📱 Archana's Herbal — IICTN App
+# 📱 Cosmo App — Archana's Herbal
 
-**Indian Institute of Cosmetology, Trichology & Nutrition**
+**Developed by BSquare Softwares**  
+*Lead Software Engineer:* **Durgesh Bagul**
 
 A cross-platform Flutter mobile application that unifies **herbal e-commerce**, **professional certification courses**, and **expert health consultations** into one seamless digital wellness platform.
 
@@ -94,23 +95,29 @@ flutter build apk --release
 - **Themes:** Light + Dark (auto-detect)
 - **Components:** BadgeChip, StarRating, PriceTag, NetworkImage, CategoryChip
 
+## 👨‍💻 Engineering & Development
+
+- **Company / Organization:** BSquare Softwares
+- **Software Engineer:** Durgesh Bagul
+
 ## 📞 Contact
 
 | | |
 |---|---|
+| **Company** | BSquare Softwares |
+| **Software Engineer** | Durgesh Bagul |
 | **Email** | archana@gmail.com |
 | **Phone** | +91 4345 33859 |
 | **Website** | www.example.com |
 
 ## 📄 License
 
-Proprietary software. All rights reserved.
+© BSquare Softwares. All rights reserved.  
+Developed by Durgesh Bagul.
 
 ---
 
 <p align="center">
-  <b>Built with ❤️ using Flutter</b><br>
-  v1.0.0 · June 2026
+  <b>Built with ❤️ by Durgesh Bagul · BSquare Softwares</b><br>
+  v1.0.0 · 2026
 </p>
-
-# Cosmo-app
