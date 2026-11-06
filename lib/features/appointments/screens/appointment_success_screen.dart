@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:saris_cosmo_center/core/theme/app_theme.dart';
 import 'package:saris_cosmo_center/features/profile/my_appointments_screen.dart';
 import 'package:saris_cosmo_center/main.dart';
-import 'appointments_screen.dart';
 
 class AppointmentSuccessScreen extends StatefulWidget {
   final String serviceName;

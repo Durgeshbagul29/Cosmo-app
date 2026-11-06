@@ -225,9 +225,7 @@ class FirebaseNotificationService {
     try {
       final prefs = await SharedPreferences.getInstance();
       String? pendingToken = prefs.getString('pending_fcm_token');
-      if (pendingToken == null) {
-        pendingToken = await getFcmToken();
-      }
+      pendingToken ??= await getFcmToken();
 
       if (pendingToken != null) {
         debugPrint("🔔 FCM Trace: Registering pending FCM token...");

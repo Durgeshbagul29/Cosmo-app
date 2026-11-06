@@ -113,4 +113,4 @@ Proprietary software. All rights reserved.
   v1.0.0 · June 2026
 </p>
 
-# sari-cosmo
+# Cosmo-app
