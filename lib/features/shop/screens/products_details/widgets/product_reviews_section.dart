@@ -218,7 +218,7 @@ class _ReviewCard extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 20,
-                backgroundColor: AppTheme.primary.withOpacity(0.12),
+                backgroundColor: AppTheme.primary.withValues(alpha: 0.12),
                 child: Text(
                   initial,
                   style: const TextStyle(
@@ -257,7 +257,7 @@ class _ReviewCard extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                  color: AppTheme.primary.withOpacity(0.08),
+                  color: AppTheme.primary.withValues(alpha: 0.08),
                   borderRadius: BorderRadius.circular(999),
                 ),
                 child: Row(

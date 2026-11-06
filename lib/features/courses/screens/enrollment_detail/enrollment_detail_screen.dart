@@ -570,33 +570,7 @@ class _EnrollmentDetailScreenState extends State<EnrollmentDetailScreen> {
 
 
 
-  String _formatClassType(String? type) {
-    if (type == null) return 'Class';
-    switch (type.toLowerCase()) {
-      case 'online_video':
-        return 'Online Video';
-      case 'offline_class':
-        return 'Offline Class';
-      case 'practical':
-        return 'Practical';
-      default:
-        return type.replaceAll('_', ' ').capitalizeFirst ?? type;
-    }
-  }
 
-  IconData _getClassTypeIcon(String? type) {
-    if (type == null) return Icons.class_outlined;
-    switch (type.toLowerCase()) {
-      case 'online_video':
-        return Icons.play_circle_outline_rounded;
-      case 'offline_class':
-        return Icons.school_outlined;
-      case 'practical':
-        return Icons.science_outlined;
-      default:
-        return Icons.book_outlined;
-    }
-  }
 
   Widget _buildCertificateCard(Enrollment enrollment) {
     final bool isUnlocked = enrollment.completedAt != null &&

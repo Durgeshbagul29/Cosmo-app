@@ -157,7 +157,7 @@ class _ProductFilterBottomSheetState extends State<ProductFilterBottomSheet> {
                                 padding: const EdgeInsets.all(14),
                                 decoration: BoxDecoration(
                                   color: isSelected
-                                      ? AppTheme.primary.withOpacity(0.08)
+                                      ? AppTheme.primary.withValues(alpha: 0.08)
                                       : AppTheme.surface,
                                   borderRadius: BorderRadius.circular(16),
                                   border: Border.all(
@@ -172,12 +172,12 @@ class _ProductFilterBottomSheetState extends State<ProductFilterBottomSheet> {
                                       width: 42,
                                       height: 42,
                                       decoration: BoxDecoration(
-                                        color: AppTheme.primary.withOpacity(0.12),
+                                        color: AppTheme.primary.withValues(alpha: 0.12),
                                         borderRadius: BorderRadius.circular(12),
                                       ),
                                       child: Icon(
                                         Icons.category_outlined,
-                                        color: AppTheme.primary.withOpacity(0.8),
+                                        color: AppTheme.primary.withValues(alpha: 0.8),
                                         size: 22,
                                       ),
                                     ),
@@ -246,7 +246,7 @@ class _ProductFilterBottomSheetState extends State<ProductFilterBottomSheet> {
           Container(
             decoration: BoxDecoration(color: AppTheme.surface, boxShadow: [
               BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withValues(alpha: 0.05),
                   blurRadius: 10,
                   offset: const Offset(0, -5))
             ]),

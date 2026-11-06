@@ -71,7 +71,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 onPressed: _onSkip,
                 style: TextButton.styleFrom(
                   foregroundColor:
-                      Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+                      Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
                 ),
                 child: const Text('Skip'),
               ),
@@ -99,7 +99,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           width: 200,
                           height: 200,
                           decoration: BoxDecoration(
-                            color: AppTheme.primary.withOpacity(0.1),
+                            color: AppTheme.primary.withValues(alpha: 0.1),
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
@@ -144,7 +144,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       dotColor: Theme.of(context)
                           .colorScheme
                           .onSurface
-                          .withOpacity(0.2),
+                          .withValues(alpha: 0.2),
                       dotHeight: 8,
                       dotWidth: 8,
                       expansionFactor: 3,

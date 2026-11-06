@@ -58,7 +58,6 @@ class AppointmentController extends GetxController {
   String? _bookingStaffName;
   String? _bookingDate;
   String? _bookingTime;
-  String? _bookingPaymentMethod;
 
   @override
   void onInit() {
@@ -279,7 +278,6 @@ class AppointmentController extends GetxController {
     _bookingDate = appointmentDate;
     _bookingTime = startTime;
     _bookingAmount = price;
-    _bookingPaymentMethod = paymentMethod;
 
     try {
       final prefs = await SharedPreferences.getInstance();

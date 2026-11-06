@@ -44,7 +44,7 @@ class ReferEarnScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.success.withOpacity(0.3),
+            color: AppTheme.success.withValues(alpha: 0.3),
             blurRadius: 16,
             offset: const Offset(0, 6),
           ),
@@ -62,7 +62,7 @@ class ReferEarnScreen extends StatelessWidget {
           const SizedBox(height: 8),
           Text(
             'Share your referral code with friends.\nBoth of you get ₹200 credits!',
-            style: TextStyle(fontSize: 14, color: Colors.white.withOpacity(0.9), height: 1.5),
+            style: TextStyle(fontSize: 14, color: Colors.white.withValues(alpha: 0.9), height: 1.5),
             textAlign: TextAlign.center,
           ),
         ],
@@ -95,7 +95,7 @@ class ReferEarnScreen extends StatelessWidget {
             width: 48,
             height: 48,
             decoration: BoxDecoration(
-              color: color.withOpacity(0.1),
+              color: color.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(14),
             ),
             child: Center(
@@ -136,9 +136,9 @@ class ReferEarnScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
             decoration: BoxDecoration(
-              color: AppTheme.primary.withOpacity(0.05),
+              color: AppTheme.primary.withValues(alpha: 0.05),
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: AppTheme.primary.withOpacity(0.2), style: BorderStyle.solid),
+              border: Border.all(color: AppTheme.primary.withValues(alpha: 0.2), style: BorderStyle.solid),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -167,7 +167,7 @@ class ReferEarnScreen extends StatelessWidget {
                   child: Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: AppTheme.primary.withOpacity(0.1),
+                      color: AppTheme.primary.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: const Icon(Icons.copy_rounded, color: AppTheme.primary, size: 20),
@@ -247,7 +247,7 @@ class ReferEarnScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 14),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.05),
+        color: color.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(

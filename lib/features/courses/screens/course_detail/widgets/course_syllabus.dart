@@ -49,7 +49,7 @@ class CourseSyllabus extends StatelessWidget {
             color: AppTheme.surface,
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
-              color: AppTheme.divider.withOpacity(0.4),
+              color: AppTheme.divider.withValues(alpha: 0.4),
               width: 1,
             ),
           ),
@@ -77,7 +77,7 @@ class CourseSyllabus extends StatelessWidget {
               leading: Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: AppTheme.primary.withOpacity(0.08),
+                  color: AppTheme.primary.withValues(alpha: 0.08),
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(

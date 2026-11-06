@@ -32,10 +32,10 @@ class CourseListCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppTheme.surface,
           borderRadius: BorderRadius.circular(18),
-          border: Border.all(color: AppTheme.divider.withOpacity(0.4), width: 1),
+          border: Border.all(color: AppTheme.divider.withValues(alpha: 0.4), width: 1),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.04),
+              color: Colors.black.withValues(alpha: 0.04),
               blurRadius: 16,
               offset: const Offset(0, 6),
             ),
@@ -78,12 +78,12 @@ class _CardImage extends StatelessWidget {
                   borderRadius: BorderRadius.zero,
                 )
               : ColoredBox(
-                  color: AppTheme.primary.withOpacity(0.06),
+                  color: AppTheme.primary.withValues(alpha: 0.06),
                   child: Center(
                     child: Icon(
                       Icons.school_rounded,
                       size: 56,
-                      color: AppTheme.primary.withOpacity(0.25),
+                      color: AppTheme.primary.withValues(alpha: 0.25),
                     ),
                   ),
                 ),
@@ -96,7 +96,7 @@ class _CardImage extends StatelessWidget {
               gradient: LinearGradient(
                 colors: [
                   Colors.transparent,
-                  Colors.black.withOpacity(0.45),
+                  Colors.black.withValues(alpha: 0.45),
                 ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -112,11 +112,11 @@ class _CardImage extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
             decoration: BoxDecoration(
-              color: AppTheme.primary.withOpacity(0.9),
+              color: AppTheme.primary.withValues(alpha: 0.9),
               borderRadius: BorderRadius.circular(8),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
+                  color: Colors.black.withValues(alpha: 0.1),
                   blurRadius: 4,
                   offset: const Offset(0, 2),
                 )
@@ -146,7 +146,7 @@ class _CardImage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
+                    color: Colors.black.withValues(alpha: 0.1),
                     blurRadius: 4,
                     offset: const Offset(0, 2),
                   )
@@ -172,7 +172,7 @@ class _CardImage extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.6),
+                color: Colors.black.withValues(alpha: 0.6),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
@@ -200,7 +200,7 @@ class _CardImage extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
             decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.6),
+              color: Colors.black.withValues(alpha: 0.6),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Row(
@@ -261,8 +261,8 @@ class _CardBody extends StatelessWidget {
                 height: 28,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: AppTheme.primary.withOpacity(0.12),
-                  border: Border.all(color: AppTheme.primary.withOpacity(0.2), width: 1),
+                  color: AppTheme.primary.withValues(alpha: 0.12),
+                  border: Border.all(color: AppTheme.primary.withValues(alpha: 0.2), width: 1),
                 ),
                 child: Center(
                   child: Text(
@@ -377,7 +377,7 @@ class _EnrollButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
-              color: AppTheme.primary.withOpacity(0.3),
+              color: AppTheme.primary.withValues(alpha: 0.3),
               blurRadius: 8,
               offset: const Offset(0, 3),
             )
@@ -448,7 +448,7 @@ class _CourseListCardShimmerState extends State<CourseListCardShimmer>
         decoration: BoxDecoration(
           color: AppTheme.surface,
           borderRadius: BorderRadius.circular(18),
-          border: Border.all(color: AppTheme.divider.withOpacity(0.4), width: 1),
+          border: Border.all(color: AppTheme.divider.withValues(alpha: 0.4), width: 1),
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(18),
@@ -562,11 +562,11 @@ class _CourseListCardShimmerState extends State<CourseListCardShimmer>
 
   LinearGradient _buildGradient(BuildContext context) {
     final base = Theme.of(context).brightness == Brightness.dark
-        ? Colors.white.withOpacity(0.05)
-        : Colors.black.withOpacity(0.06);
+        ? Colors.white.withValues(alpha: 0.05)
+        : Colors.black.withValues(alpha: 0.06);
     final highlight = Theme.of(context).brightness == Brightness.dark
-        ? Colors.white.withOpacity(0.12)
-        : Colors.black.withOpacity(0.12);
+        ? Colors.white.withValues(alpha: 0.12)
+        : Colors.black.withValues(alpha: 0.12);
 
     return LinearGradient(
       begin: Alignment(_animation.value - 1, 0),

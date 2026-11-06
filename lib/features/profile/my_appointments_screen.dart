@@ -406,7 +406,7 @@ class _MyAppointmentsScreenState extends State<MyAppointmentsScreen> {
             Icon(
               Icons.calendar_month_outlined,
               size: 64,
-              color: AppTheme.textLight.withOpacity(0.5),
+              color: AppTheme.textLight.withValues(alpha: 0.5),
             ),
             const SizedBox(height: 16),
             const Text(
@@ -449,7 +449,7 @@ class _MyAppointmentsScreenState extends State<MyAppointmentsScreen> {
           border: Border.all(color: AppTheme.divider),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.04),
+              color: Colors.black.withValues(alpha: 0.04),
               blurRadius: 8,
               offset: const Offset(0, 3),
             ),
@@ -466,7 +466,7 @@ class _MyAppointmentsScreenState extends State<MyAppointmentsScreen> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                     decoration: BoxDecoration(
-                      color: statusColor.withOpacity(0.1),
+                      color: statusColor.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Row(
@@ -593,7 +593,7 @@ class _MyAppointmentsScreenState extends State<MyAppointmentsScreen> {
           border: Border.all(color: AppTheme.divider),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.02),
+              color: Colors.black.withValues(alpha: 0.02),
               blurRadius: 8,
               offset: const Offset(0, 3),
             ),
@@ -605,7 +605,7 @@ class _MyAppointmentsScreenState extends State<MyAppointmentsScreen> {
               width: 44,
               height: 44,
               decoration: BoxDecoration(
-                color: statusColor.withOpacity(0.1),
+                color: statusColor.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(
@@ -640,7 +640,7 @@ class _MyAppointmentsScreenState extends State<MyAppointmentsScreen> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               decoration: BoxDecoration(
-                color: statusColor.withOpacity(0.08),
+                color: statusColor.withValues(alpha: 0.08),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
@@ -833,9 +833,9 @@ class _AppointmentDetailSheetState extends State<_AppointmentDetailSheet> {
                           Container(
                             padding: const EdgeInsets.all(16),
                             decoration: BoxDecoration(
-                              color: statusColor.withOpacity(0.08),
+                              color: statusColor.withValues(alpha: 0.08),
                               borderRadius: BorderRadius.circular(16),
-                              border: Border.all(color: statusColor.withOpacity(0.2)),
+                              border: Border.all(color: statusColor.withValues(alpha: 0.2)),
                             ),
                             child: Row(
                               children: [
@@ -1460,7 +1460,7 @@ class _RescheduleAppointmentSheetState extends State<_RescheduleAppointmentSheet
                     height: 48,
                     width: 48,
                     decoration: BoxDecoration(
-                      color: AppTheme.primary.withOpacity(0.1),
+                      color: AppTheme.primary.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(24),
                     ),
                     child: const Icon(Icons.calendar_month_rounded, color: AppTheme.primary),
@@ -1549,7 +1549,7 @@ class _RescheduleAppointmentSheetState extends State<_RescheduleAppointmentSheet
                                     weekday,
                                     style: TextStyle(
                                       color: isSelected
-                                          ? Colors.white.withOpacity(0.8)
+                                          ? Colors.white.withValues(alpha: 0.8)
                                           : AppTheme.textLight,
                                       fontSize: 11,
                                       fontWeight: FontWeight.w500,
@@ -1654,7 +1654,7 @@ class _RescheduleAppointmentSheetState extends State<_RescheduleAppointmentSheet
                                   Text(
                                     staffName,
                                     style: TextStyle(
-                                      color: isSelected ? Colors.white.withOpacity(0.8) : AppTheme.textLight,
+                                      color: isSelected ? Colors.white.withValues(alpha: 0.8) : AppTheme.textLight,
                                       fontSize: 10,
                                     ),
                                   ),

@@ -49,7 +49,7 @@ class CartScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.shopping_cart_outlined, size: 80, color: AppTheme.textLight.withOpacity(0.5)),
+                Icon(Icons.shopping_cart_outlined, size: 80, color: AppTheme.textLight.withValues(alpha: 0.5)),
                 const SizedBox(height: 16),
                 const Text('Your cart is empty', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: AppTheme.textDark)),
                 const SizedBox(height: 8),
@@ -91,7 +91,7 @@ class CartScreen extends StatelessWidget {
               if (!cartController.isUpdating.value) return const SizedBox.shrink();
               return Positioned.fill(
                 child: Container(
-                  color: Colors.black.withOpacity(0.1),
+                  color: Colors.black.withValues(alpha: 0.1),
                   child: const Center(
                     child: CircularProgressIndicator(color: AppTheme.primary),
                   ),
@@ -127,7 +127,7 @@ class CartScreen extends StatelessWidget {
           color: AppTheme.surface,
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
-            BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10, offset: const Offset(0, 4))
+            BoxShadow(color: Colors.black.withValues(alpha: 0.04), blurRadius: 10, offset: const Offset(0, 4))
           ],
         ),
         child: Row(
@@ -145,7 +145,7 @@ class CartScreen extends StatelessWidget {
                     height: 80,
                     width: 80,
                     decoration: BoxDecoration(
-                      color: AppTheme.primary.withOpacity(0.05),
+                      color: AppTheme.primary.withValues(alpha: 0.05),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Center(
@@ -232,7 +232,7 @@ class CartScreen extends StatelessWidget {
         color: AppTheme.surface,
         borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
         boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.08), blurRadius: 20, offset: const Offset(0, -5))
+          BoxShadow(color: Colors.black.withValues(alpha: 0.08), blurRadius: 20, offset: const Offset(0, -5))
         ],
       ),
       child: SafeArea(

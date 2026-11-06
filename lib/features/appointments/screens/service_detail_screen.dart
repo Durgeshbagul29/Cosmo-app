@@ -150,7 +150,7 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
             color: AppTheme.surface,
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.05),
+                color: Colors.black.withValues(alpha: 0.05),
                 blurRadius: 10,
                 offset: const Offset(0, -3),
               ),
@@ -234,8 +234,8 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                          AppTheme.primary.withOpacity(0.2),
-                          AppTheme.primary.withOpacity(0.05),
+                          AppTheme.primary.withValues(alpha: 0.2),
+                          AppTheme.primary.withValues(alpha: 0.05),
                         ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
@@ -245,7 +245,7 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
                       child: Icon(
                         Icons.spa_rounded,
                         size: 90,
-                        color: AppTheme.primary.withOpacity(0.4),
+                        color: AppTheme.primary.withValues(alpha: 0.4),
                       ),
                     ),
                   ),
@@ -255,9 +255,9 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Colors.black.withOpacity(0.45),
+                    Colors.black.withValues(alpha: 0.45),
                     Colors.transparent,
-                    Colors.black.withOpacity(0.75),
+                    Colors.black.withValues(alpha: 0.75),
                   ],
                   stops: const [0.0, 0.45, 1.0],
                 ),
@@ -278,7 +278,7 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: AppTheme.primary.withOpacity(0.3),
+                            color: AppTheme.primary.withValues(alpha: 0.3),
                             blurRadius: 8,
                             offset: const Offset(0, 4),
                           ),
@@ -331,7 +331,7 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
               decoration: BoxDecoration(
-                color: AppTheme.success.withOpacity(0.1),
+                color: AppTheme.success.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: const Text(
@@ -422,7 +422,7 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
           border: Border.all(color: AppTheme.divider),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.03),
+              color: Colors.black.withValues(alpha: 0.03),
               blurRadius: 6,
               offset: const Offset(0, 3),
             ),
@@ -446,7 +446,7 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
                     height: 60,
                     width: 60,
                     decoration: BoxDecoration(
-                      color: AppTheme.primary.withOpacity(0.1),
+                      color: AppTheme.primary.withValues(alpha: 0.1),
                       shape: BoxShape.circle,
                     ),
                     child: Center(
@@ -962,7 +962,7 @@ class _ServiceBookingSheetState extends State<_ServiceBookingSheet> {
                       height: 48,
                       width: 48,
                       decoration: BoxDecoration(
-                        color: AppTheme.primary.withOpacity(0.1),
+                        color: AppTheme.primary.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(24),
                       ),
                       child:
@@ -1030,7 +1030,7 @@ class _ServiceBookingSheetState extends State<_ServiceBookingSheet> {
                                 width: 160,
                                 decoration: BoxDecoration(
                                   color: isSelected
-                                      ? AppTheme.primary.withOpacity(0.05)
+                                      ? AppTheme.primary.withValues(alpha: 0.05)
                                       : AppTheme.cardBg,
                                   borderRadius: BorderRadius.circular(12),
                                   border: Border.all(
@@ -1054,7 +1054,7 @@ class _ServiceBookingSheetState extends State<_ServiceBookingSheet> {
                                       CircleAvatar(
                                         radius: 18,
                                         backgroundColor:
-                                            AppTheme.primary.withOpacity(0.1),
+                                            AppTheme.primary.withValues(alpha: 0.1),
                                         child: Text(
                                           staff.name[0].toUpperCase(),
                                           style: const TextStyle(
@@ -1146,7 +1146,7 @@ class _ServiceBookingSheetState extends State<_ServiceBookingSheet> {
                                     weekday,
                                     style: TextStyle(
                                       color: isSelected
-                                          ? Colors.white.withOpacity(0.8)
+                                          ? Colors.white.withValues(alpha: 0.8)
                                           : AppTheme.textLight,
                                       fontSize: 11,
                                       fontWeight: FontWeight.w500,
@@ -1319,7 +1319,7 @@ class _ServiceBookingSheetState extends State<_ServiceBookingSheet> {
           duration: const Duration(milliseconds: 200),
           padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
           decoration: BoxDecoration(
-            color: isSelected ? AppTheme.primary.withOpacity(0.05) : AppTheme.cardBg,
+            color: isSelected ? AppTheme.primary.withValues(alpha: 0.05) : AppTheme.cardBg,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: isSelected ? AppTheme.primary : AppTheme.divider,

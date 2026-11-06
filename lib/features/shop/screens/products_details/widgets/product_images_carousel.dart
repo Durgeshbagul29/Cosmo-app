@@ -79,7 +79,7 @@ class _ProductImagesCarouselState extends State<ProductImagesCarousel> {
                           decoration: BoxDecoration(
                             color: _currentImageIndex == index
                                 ? AppTheme.primary
-                                : AppTheme.textLight.withOpacity(0.4),
+                                : AppTheme.textLight.withValues(alpha: 0.4),
                             borderRadius: BorderRadius.circular(3),
                           ),
                         ),

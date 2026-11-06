@@ -15,7 +15,6 @@ class CoursePaymentController extends GetxController {
   late Razorpay _razorpay;
   final CourseService _courseService = CourseService();
   
-  Course? _activeCourse;
   String? _activeCourseTitle;
   double? _activeCoursePrice;
 
@@ -57,7 +56,6 @@ class CoursePaymentController extends GetxController {
   }
 
   Future<void> startCheckout(Course course) async {
-    _activeCourse = course;
     _activeCourseTitle = course.title;
     _activeCoursePrice = course.price;
     _showLoadingDialog();
@@ -134,7 +132,6 @@ class CoursePaymentController extends GetxController {
   }
 
   Future<void> resumePayment(Enrollment enrollmentObj) async {
-    _activeCourse = null;
     _activeCourseTitle = enrollmentObj.course.title;
     _currentEnrollmentId = enrollmentObj.id;
     _showLoadingDialog();

@@ -43,12 +43,12 @@ class CourseCard extends StatelessWidget {
                     height: 120,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: AppTheme.primary.withOpacity(0.05),
+                      color: AppTheme.primary.withValues(alpha: 0.05),
                       borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
                     ),
                     child: Center(
                       child: Icon(Icons.school_rounded,
-                          size: 48, color: AppTheme.primary.withOpacity(0.3)),
+                          size: 48, color: AppTheme.primary.withValues(alpha: 0.3)),
                     ),
                   ),
           ]),

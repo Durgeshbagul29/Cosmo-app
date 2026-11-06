@@ -70,7 +70,7 @@ class MyOrdersScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.assignment_outlined, size: 80, color: AppTheme.textLight.withOpacity(0.4)),
+                      Icon(Icons.assignment_outlined, size: 80, color: AppTheme.textLight.withValues(alpha: 0.4)),
                       const SizedBox(height: 16),
                       const Text(
                         'No Orders Found',
@@ -130,12 +130,12 @@ class MyOrdersScreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.02),
+              color: Colors.black.withValues(alpha: 0.02),
               blurRadius: 10,
               offset: const Offset(0, 4),
             )
           ],
-          border: Border.all(color: AppTheme.divider.withOpacity(0.5)),
+          border: Border.all(color: AppTheme.divider.withValues(alpha: 0.5)),
         ),
         child: Column(
           children: [
@@ -143,7 +143,7 @@ class MyOrdersScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               decoration: BoxDecoration(
-                color: statusColor.withOpacity(0.05),
+                color: statusColor.withValues(alpha: 0.05),
                 borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
               ),
               child: Row(
@@ -178,7 +178,7 @@ class MyOrdersScreen extends StatelessWidget {
                     height: 50,
                     width: 50,
                     decoration: BoxDecoration(
-                      color: AppTheme.primary.withOpacity(0.05),
+                      color: AppTheme.primary.withValues(alpha: 0.05),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: const Center(

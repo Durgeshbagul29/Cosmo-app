@@ -104,13 +104,13 @@ class NotificationsScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(24),
                   decoration: BoxDecoration(
-                    color: AppTheme.primary.withOpacity(0.05),
+                    color: AppTheme.primary.withValues(alpha: 0.05),
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
                     Icons.notifications_off_outlined,
                     size: 64,
-                    color: AppTheme.primary.withOpacity(0.4),
+                    color: AppTheme.primary.withValues(alpha: 0.4),
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -189,12 +189,12 @@ class NotificationsScreen extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
       decoration: BoxDecoration(
-        color: isRead ? AppTheme.surface : AppTheme.primary.withOpacity(0.03),
+        color: isRead ? AppTheme.surface : AppTheme.primary.withValues(alpha: 0.03),
         borderRadius: BorderRadius.circular(14),
-        border: isRead ? null : Border.all(color: AppTheme.primary.withOpacity(0.1)),
+        border: isRead ? null : Border.all(color: AppTheme.primary.withValues(alpha: 0.1)),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.02),
+            color: Colors.black.withValues(alpha: 0.02),
             blurRadius: 6,
             offset: const Offset(0, 2),
           ),
@@ -239,7 +239,7 @@ class NotificationsScreen extends StatelessWidget {
               width: 44,
               height: 44,
               decoration: BoxDecoration(
-                color: color.withOpacity(0.1),
+                color: color.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(icon, color: color, size: 22),

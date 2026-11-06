@@ -17,7 +17,7 @@ class ProductInfoHeader extends StatelessWidget {
           children: [
             BadgeChip(
               label: product.category,
-              bg: AppTheme.primary.withOpacity(0.1),
+              bg: AppTheme.primary.withValues(alpha: 0.1),
               fg: AppTheme.primary,
             ),
             if (product.badge.isNotEmpty) ...[
@@ -31,7 +31,7 @@ class ProductInfoHeader extends StatelessWidget {
               const SizedBox(width: 8),
               BadgeChip(
                 label: '${product.weight} g',
-                bg: Colors.blue.withOpacity(0.1),
+                bg: Colors.blue.withValues(alpha: 0.1),
                 fg: Colors.blue.shade700,
               ),
             ],
@@ -60,7 +60,7 @@ class ProductInfoHeader extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
-                  color: AppTheme.warning.withOpacity(0.15),
+                  color: AppTheme.warning.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
@@ -72,7 +72,7 @@ class ProductInfoHeader extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
-                  color: AppTheme.success.withOpacity(0.15),
+                  color: AppTheme.success.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
@@ -84,7 +84,7 @@ class ProductInfoHeader extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
-                  color: Colors.red.withOpacity(0.15),
+                  color: Colors.red.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: const Text(

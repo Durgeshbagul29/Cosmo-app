@@ -18,13 +18,13 @@ class CourseStats extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.03),
+            color: Colors.black.withValues(alpha: 0.03),
             blurRadius: 15,
             offset: const Offset(0, 8),
           ),
         ],
         border: Border.all(
-          color: AppTheme.divider.withOpacity(0.4),
+          color: AppTheme.divider.withValues(alpha: 0.4),
           width: 1,
         ),
       ),
@@ -83,7 +83,7 @@ class CourseStats extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: color.withOpacity(0.09),
+              color: color.withValues(alpha: 0.09),
               shape: BoxShape.circle,
             ),
             child: Icon(
@@ -124,7 +124,7 @@ class CourseStats extends StatelessWidget {
     return Container(
       height: 36,
       width: 1,
-      color: AppTheme.divider.withOpacity(0.6),
+      color: AppTheme.divider.withValues(alpha: 0.6),
     );
   }
 }

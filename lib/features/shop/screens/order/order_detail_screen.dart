@@ -175,7 +175,7 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                         child: Container(
                           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                           decoration: BoxDecoration(
-                            color: AppTheme.primary.withOpacity(0.1),
+                            color: AppTheme.primary.withValues(alpha: 0.1),
                             border: Border.all(color: AppTheme.primary),
                             borderRadius: BorderRadius.circular(20),
                           ),
@@ -200,15 +200,15 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
             children: [
               BadgeChip(
                 label: detail.status.toUpperCase(),
-                bg: _getStatusColor(detail.status).withOpacity(0.12),
+                bg: _getStatusColor(detail.status).withValues(alpha: 0.12),
                 fg: _getStatusColor(detail.status),
               ),
               const SizedBox(width: 8),
               BadgeChip(
                 label: detail.paymentStatus.toUpperCase(),
                 bg: detail.paymentStatus.toLowerCase() == 'paid'
-                    ? AppTheme.success.withOpacity(0.12)
-                    : AppTheme.primary.withOpacity(0.12),
+                    ? AppTheme.success.withValues(alpha: 0.12)
+                    : AppTheme.primary.withValues(alpha: 0.12),
                 fg: detail.paymentStatus.toLowerCase() == 'paid'
                     ? AppTheme.success
                     : AppTheme.primary,
@@ -344,7 +344,7 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                   width: 74,
                   height: 74,
                   decoration: BoxDecoration(
-                    color: AppTheme.primary.withOpacity(0.05),
+                    color: AppTheme.primary.withValues(alpha: 0.05),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: item.productImage.isNotEmpty
@@ -400,8 +400,8 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                             style: TextButton.styleFrom(
                               padding: const EdgeInsets.symmetric(horizontal: 8),
                               backgroundColor: item.isReviewed
-                                  ? AppTheme.divider.withOpacity(0.25)
-                                  : AppTheme.primary.withOpacity(0.08),
+                                  ? AppTheme.divider.withValues(alpha: 0.25)
+                                  : AppTheme.primary.withValues(alpha: 0.08),
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                             ),
                           ),

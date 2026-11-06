@@ -65,7 +65,7 @@ class _SavedAddressesScreenState extends State<SavedAddressesScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(Icons.location_off_outlined,
-              size: 80, color: AppTheme.textLight.withOpacity(0.5)),
+              size: 80, color: AppTheme.textLight.withValues(alpha: 0.5)),
           const SizedBox(height: 16),
           const Text('No Saved Addresses',
               style: TextStyle(
@@ -93,7 +93,7 @@ class _SavedAddressesScreenState extends State<SavedAddressesScreen> {
             : Border.all(color: AppTheme.divider),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.03),
+            color: Colors.black.withValues(alpha: 0.03),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -109,7 +109,7 @@ class _SavedAddressesScreenState extends State<SavedAddressesScreen> {
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: AppTheme.primary.withOpacity(0.1),
+                    color: AppTheme.primary.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: const Icon(
@@ -132,7 +132,7 @@ class _SavedAddressesScreenState extends State<SavedAddressesScreen> {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
-                      color: AppTheme.primary.withOpacity(0.1),
+                      color: AppTheme.primary.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(6),
                     ),
                     child: const Text(

@@ -39,7 +39,7 @@ class MyCoursesScreen extends StatelessWidget {
                 Icon(
                   Icons.school_outlined,
                   size: 64,
-                  color: AppTheme.textLight.withOpacity(0.5),
+                  color: AppTheme.textLight.withValues(alpha: 0.5),
                 ),
                 const SizedBox(height: 16),
                 const Text(

@@ -95,7 +95,7 @@ class _AppointmentsScreenState extends State<AppointmentsScreen> {
                                       Icon(
                                         Icons.spa_outlined,
                                         size: 64,
-                                        color: AppTheme.textLight.withOpacity(0.5),
+                                        color: AppTheme.textLight.withValues(alpha: 0.5),
                                       ),
                                       const SizedBox(height: 16),
                                       const Text(
@@ -154,7 +154,7 @@ class _AppointmentsScreenState extends State<AppointmentsScreen> {
             return Container(
               margin: const EdgeInsets.only(right: 8),
               child: Chip(
-                backgroundColor: AppTheme.primary.withOpacity(0.1),
+                backgroundColor: AppTheme.primary.withValues(alpha: 0.1),
                 side: const BorderSide(color: AppTheme.primary, width: 0.5),
                 label: Text(
                   category.name,
@@ -208,7 +208,7 @@ class ServiceCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 8,
             offset: const Offset(0, 3),
           ),
@@ -248,8 +248,8 @@ class ServiceCard extends StatelessWidget {
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [
-                                  AppTheme.primary.withOpacity(0.15),
-                                  AppTheme.primary.withOpacity(0.03),
+                                  AppTheme.primary.withValues(alpha: 0.15),
+                                  AppTheme.primary.withValues(alpha: 0.03),
                                 ],
                               ),
                             ),
@@ -966,7 +966,7 @@ class ServiceCardShimmer extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 8,
             offset: const Offset(0, 3),
           ),

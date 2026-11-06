@@ -58,8 +58,8 @@ class CourseAppBar extends StatelessWidget {
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                          AppTheme.primary.withOpacity(0.2),
-                          AppTheme.primary.withOpacity(0.05),
+                          AppTheme.primary.withValues(alpha: 0.2),
+                          AppTheme.primary.withValues(alpha: 0.05),
                         ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
@@ -69,7 +69,7 @@ class CourseAppBar extends StatelessWidget {
                       child: Icon(
                         Icons.school_rounded,
                         size: 90,
-                        color: AppTheme.primary.withOpacity(0.4),
+                        color: AppTheme.primary.withValues(alpha: 0.4),
                       ),
                     ),
                   ),
@@ -80,9 +80,9 @@ class CourseAppBar extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Colors.black.withOpacity(0.55),
+                    Colors.black.withValues(alpha: 0.55),
                     Colors.transparent,
-                    Colors.black.withOpacity(0.85),
+                    Colors.black.withValues(alpha: 0.85),
                   ],
                   stops: const [0.0, 0.45, 1.0],
                 ),
@@ -104,7 +104,7 @@ class CourseAppBar extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
-                          color: AppTheme.primary.withOpacity(0.3),
+                          color: AppTheme.primary.withValues(alpha: 0.3),
                           blurRadius: 8,
                           offset: const Offset(0, 4),
                         ),

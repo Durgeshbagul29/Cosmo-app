@@ -23,14 +23,14 @@ class CourseBottomBar extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.06),
+            color: Colors.black.withValues(alpha: 0.06),
             blurRadius: 20,
             offset: const Offset(0, -6),
           ),
         ],
         border: Border(
           top: BorderSide(
-            color: AppTheme.divider.withOpacity(0.4),
+            color: AppTheme.divider.withValues(alpha: 0.4),
             width: 1,
           ),
         ),
@@ -86,7 +86,7 @@ class CourseBottomBar extends StatelessWidget {
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: AppTheme.primary.withOpacity(0.25),
+                        color: AppTheme.primary.withValues(alpha: 0.25),
                         blurRadius: 8,
                         offset: const Offset(0, 4),
                       ),

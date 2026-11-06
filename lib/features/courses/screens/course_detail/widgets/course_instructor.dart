@@ -20,10 +20,10 @@ class CourseInstructorCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: AppTheme.primary.withOpacity(0.04),
+        color: AppTheme.primary.withValues(alpha: 0.04),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: AppTheme.primary.withOpacity(0.12),
+          color: AppTheme.primary.withValues(alpha: 0.12),
           width: 1.2,
         ),
       ),
@@ -34,7 +34,7 @@ class CourseInstructorCard extends StatelessWidget {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(
-                color: AppTheme.primary.withOpacity(0.4),
+                color: AppTheme.primary.withValues(alpha: 0.4),
                 width: 1.5,
               ),
             ),
