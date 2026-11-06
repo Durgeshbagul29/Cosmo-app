@@ -14,7 +14,7 @@ class MyCoursesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final myCoursesController = Get.put(MyCoursesController());
     final courseController = Get.put(CourseController());
-    final paymentController = Get.put(CoursePaymentController());
+    Get.put(CoursePaymentController());
 
     return Scaffold(
       backgroundColor: AppTheme.background,
