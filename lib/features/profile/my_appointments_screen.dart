@@ -1150,7 +1150,7 @@ class _AppointmentDetailSheetState extends State<_AppointmentDetailSheet> {
             onPressed: () async {
               Navigator.pop(ctx);
               final success = await _controller.cancelServiceAppointment(appointmentId);
-              if (success && mounted) {
+              if (success && context.mounted) {
                 Navigator.pop(context);
                 AppSnackbar.success(
                   'Success',
@@ -1329,7 +1329,7 @@ class _AppointmentDetailSheetState extends State<_AppointmentDetailSheet> {
                                     titleController.text.trim(),
                                     commentController.text.trim(),
                                   );
-                                  if (success) {
+                                  if (success && ctx.mounted) {
                                     Navigator.pop(ctx);
                                     AppSnackbar.success(
                                       'Success',
@@ -1710,7 +1710,7 @@ class _RescheduleAppointmentSheetState extends State<_RescheduleAppointmentSheet
                                   startTime: _selectedTime!,
                                 );
 
-                                if (success && mounted) {
+                                if (success && context.mounted) {
                                   Navigator.pop(context);
                                   AppSnackbar.success(
                                     'Success',
