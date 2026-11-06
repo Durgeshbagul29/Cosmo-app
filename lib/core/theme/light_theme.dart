@@ -9,7 +9,6 @@ final ThemeData lightTheme = ThemeData(
     primary: AppColors.primary,
     secondary: AppColors.accent,
     surface: AppColors.surfaceLight,
-    background: AppColors.backgroundLight,
     error: AppColors.error,
   ),
   scaffoldBackgroundColor: AppColors.backgroundLight,
