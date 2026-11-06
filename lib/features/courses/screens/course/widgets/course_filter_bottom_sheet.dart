@@ -68,21 +68,29 @@ class _CourseFilterBottomSheetState extends State<CourseFilterBottomSheet> {
                         style: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.w600)),
                     const SizedBox(height: 12),
-                    ...[
-                      'Relevance',
-                      'Price: Low to High',
-                      'Price: High to Low'
-                    ].map((option) => RadioListTile<String>(
-                          title: Text(option),
-                          value: option,
-                          groupValue: _tempSort,
-                          onChanged: (val) =>
-                              setState(() => _tempSort = val!),
-                          activeColor: AppTheme.primary,
-                          contentPadding: EdgeInsets.zero,
-                          visualDensity: const VisualDensity(
-                              horizontal: -4, vertical: -4),
-                        )),
+                    RadioGroup<String>(
+                      groupValue: _tempSort,
+                      onChanged: (val) {
+                        if (val != null) {
+                          setState(() => _tempSort = val);
+                        }
+                      },
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          'Relevance',
+                          'Price: Low to High',
+                          'Price: High to Low',
+                        ].map((option) => RadioListTile<String>(
+                              title: Text(option),
+                              value: option,
+                              activeColor: AppTheme.primary,
+                              contentPadding: EdgeInsets.zero,
+                              visualDensity: const VisualDensity(
+                                  horizontal: -4, vertical: -4),
+                            )).toList(),
+                      ),
+                    ),
                     const SizedBox(height: 24),
                     const Divider(height: 1, color: AppTheme.divider),
                     const SizedBox(height: 24),

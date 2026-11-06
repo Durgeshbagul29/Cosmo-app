@@ -223,12 +223,19 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
   Widget _buildTrackingTimeline(String status) {
     int currentStep = 0;
     final normalized = status.trim().toLowerCase();
-    if (normalized == 'pending') currentStep = 0;
-    else if (normalized == 'confirmed') currentStep = 1;
-    else if (normalized == 'processing' || normalized == 'packed') currentStep = 2;
-    else if (normalized == 'shipped') currentStep = 3;
-    else if (normalized == 'completed' || normalized == 'delivered') currentStep = 4;
-    else currentStep = 0;
+    if (normalized == 'pending') {
+      currentStep = 0;
+    } else if (normalized == 'confirmed') {
+      currentStep = 1;
+    } else if (normalized == 'processing' || normalized == 'packed') {
+      currentStep = 2;
+    } else if (normalized == 'shipped') {
+      currentStep = 3;
+    } else if (normalized == 'completed' || normalized == 'delivered') {
+      currentStep = 4;
+    } else {
+      currentStep = 0;
+    }
 
     return Container(
       color: AppTheme.surface,

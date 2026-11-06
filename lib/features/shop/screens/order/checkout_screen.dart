@@ -385,23 +385,35 @@ class CheckoutScreen extends StatelessWidget {
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.textDark),
           ),
           const SizedBox(height: 12),
-          // COD option
-          _buildPaymentMethodTile(
-            controller: controller,
-            methodId: 'cod',
-            title: 'Cash on Delivery',
-            subtitle: 'Pay with cash upon delivery of items',
-            icon: Icons.local_shipping_outlined,
-          ),
-          const SizedBox(height: 10),
-          // Razorpay option
-          _buildPaymentMethodTile(
-            controller: controller,
-            methodId: 'razorpay',
-            title: 'Pay Online',
-            subtitle: 'Pay securely using Card, NetBanking, or UPI',
-            icon: Icons.payment_rounded,
-          ),
+          Obx(() => RadioGroup<String>(
+            groupValue: controller.selectedPaymentMethod.value,
+            onChanged: (val) {
+              if (val != null && !controller.isOrderCreated.value) {
+                controller.selectedPaymentMethod.value = val;
+              }
+            },
+            child: Column(
+              children: [
+                // COD option
+                _buildPaymentMethodTile(
+                  controller: controller,
+                  methodId: 'cod',
+                  title: 'Cash on Delivery',
+                  subtitle: 'Pay with cash upon delivery of items',
+                  icon: Icons.local_shipping_outlined,
+                ),
+                const SizedBox(height: 10),
+                // Razorpay option
+                _buildPaymentMethodTile(
+                  controller: controller,
+                  methodId: 'razorpay',
+                  title: 'Pay Online',
+                  subtitle: 'Pay securely using Card, NetBanking, or UPI',
+                  icon: Icons.payment_rounded,
+                ),
+              ],
+            ),
+          )),
         ],
       ),
     );
@@ -465,10 +477,6 @@ class CheckoutScreen extends StatelessWidget {
               ),
               Radio<String>(
                 value: methodId,
-                groupValue: controller.selectedPaymentMethod.value,
-                onChanged: controller.isOrderCreated.value
-                    ? null
-                    : (val) => controller.selectedPaymentMethod.value = val!,
                 activeColor: AppTheme.primary,
               ),
             ],
