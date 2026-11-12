@@ -5,7 +5,7 @@ import 'package:saris_cosmo_center/core/theme/app_theme.dart';
 import 'package:saris_cosmo_center/core/services/firebase_notification_service.dart';
 import 'package:saris_cosmo_center/features/home/home_screen.dart';
 import 'package:saris_cosmo_center/features/courses/screens/course/courses_screen.dart';
-import 'package:saris_cosmo_center/features/appointments/screens/appointments_screen.dart';
+import 'package:saris_cosmo_center/features/appointments/screens/appointment/appointments_screen.dart';
 import 'package:saris_cosmo_center/features/profile/profile_screen.dart';
 import 'package:saris_cosmo_center/features/onboarding/onboarding_screen.dart';
 import 'package:saris_cosmo_center/features/auth/login_screen.dart';

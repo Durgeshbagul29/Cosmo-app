@@ -6,7 +6,7 @@ import 'package:saris_cosmo_center/core/theme/app_theme.dart';
 import '../services/appointment_service.dart';
 import '../models/service_model.dart';
 import '../models/appointment_model.dart';
-import '../screens/appointment_success_screen.dart';
+import '../screens/appointment_success/appointment_success_screen.dart';
 import 'package:saris_cosmo_center/core/models/models.dart';
 
 class AppointmentController extends GetxController {

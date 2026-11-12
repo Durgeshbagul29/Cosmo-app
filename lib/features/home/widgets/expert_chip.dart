@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:saris_cosmo_center/core/theme/app_theme.dart';
 import 'package:saris_cosmo_center/core/widgets/common_widgets.dart';
 import 'package:saris_cosmo_center/core/models/models.dart';
-import 'package:saris_cosmo_center/features/appointments/screens/appointments_screen.dart';
+import 'package:saris_cosmo_center/features/appointments/screens/appointment/appointments_screen.dart';
 import 'package:saris_cosmo_center/features/home/widgets/product_card.dart';
 
 class ExpertChip extends StatelessWidget {

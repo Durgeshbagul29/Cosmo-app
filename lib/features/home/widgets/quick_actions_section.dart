@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:saris_cosmo_center/features/courses/screens/course/courses_screen.dart';
-import 'package:saris_cosmo_center/features/appointments/screens/appointments_screen.dart';
+import 'package:saris_cosmo_center/features/appointments/screens/appointment/appointments_screen.dart';
 import 'package:saris_cosmo_center/features/shop/screens/products/products_screen.dart';
 import 'package:saris_cosmo_center/features/profile/wishlist_screen.dart';
 

@@ -5,7 +5,7 @@ import 'package:saris_cosmo_center/features/courses/screens/course/widgets/cours
 import 'package:saris_cosmo_center/features/shop/models/product_model.dart';
 import 'package:saris_cosmo_center/features/courses/models/course_model.dart';
 import 'package:saris_cosmo_center/features/appointments/models/service_model.dart';
-import 'package:saris_cosmo_center/features/appointments/screens/appointments_screen.dart';
+import 'package:saris_cosmo_center/features/appointments/screens/appointment/appointments_screen.dart';
 
 class SearchResultsSection extends StatelessWidget {
   final List<Product> products;

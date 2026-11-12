@@ -9,7 +9,7 @@ import 'package:saris_cosmo_center/features/home/widgets/expert_chip.dart';
 import 'package:saris_cosmo_center/features/search/search_screen.dart';
 import 'package:get/get.dart';
 import 'package:saris_cosmo_center/main.dart';
-import 'package:saris_cosmo_center/features/appointments/screens/appointments_screen.dart';
+import 'package:saris_cosmo_center/features/appointments/screens/appointment/appointments_screen.dart';
 import 'package:saris_cosmo_center/features/appointments/screens/experts_screen.dart';
 import 'package:saris_cosmo_center/features/shop/controllers/cart_controller.dart';
 import 'package:saris_cosmo_center/features/shop/controllers/product_controller.dart';

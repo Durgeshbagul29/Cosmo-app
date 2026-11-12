@@ -4,7 +4,7 @@ import 'package:saris_cosmo_center/core/theme/app_theme.dart';
 import 'package:saris_cosmo_center/core/widgets/common_widgets.dart';
 import 'package:saris_cosmo_center/core/models/models.dart';
 import 'package:saris_cosmo_center/features/appointments/controllers/appointment_controller.dart';
-import 'package:saris_cosmo_center/features/appointments/screens/appointments_screen.dart';
+import 'package:saris_cosmo_center/features/appointments/screens/appointment/appointments_screen.dart';
 
 class ExpertsScreen extends StatelessWidget {
   const ExpertsScreen({super.key});
