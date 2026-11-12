@@ -4,7 +4,7 @@ import 'package:saris_cosmo_center/core/theme/app_theme.dart';
 import 'package:saris_cosmo_center/core/widgets/common_widgets.dart';
 import 'package:saris_cosmo_center/features/appointments/controllers/appointment_controller.dart';
 import 'package:saris_cosmo_center/features/appointments/models/service_model.dart';
-import 'package:saris_cosmo_center/features/appointments/screens/service_detail_screen.dart';
+import 'package:saris_cosmo_center/features/appointments/screens/service_detail/service_detail_screen.dart';
 
 class ServiceCard extends StatelessWidget {
   final ServiceModel service;
