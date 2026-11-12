@@ -1,80 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:saris_cosmo_center/core/theme/app_theme.dart';
 import 'package:saris_cosmo_center/core/widgets/common_widgets.dart';
 import 'package:saris_cosmo_center/core/models/models.dart';
-import 'package:saris_cosmo_center/features/appointments/controllers/appointment_controller.dart';
-import 'package:saris_cosmo_center/features/appointments/screens/appointment/appointments_screen.dart';
+import 'package:saris_cosmo_center/features/appointments/screens/appointment/widgets/booking_sheet.dart';
 
-class ExpertsScreen extends StatelessWidget {
-  const ExpertsScreen({super.key});
+class ExpertCard extends StatelessWidget {
+  final Expert expert;
+
+  const ExpertCard({
+    super.key,
+    required this.expert,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final ac = Get.find<AppointmentController>();
-
-    return Scaffold(
-      backgroundColor: AppTheme.background,
-      appBar: AppBar(
-        title: const Text('Consult Experts'),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded),
-          onPressed: () => Navigator.pop(context),
-        ),
-      ),
-      body: Obx(() {
-        if (ac.isLoadingExperts.value && ac.expertsList.isEmpty) {
-          return const Center(
-            child: CircularProgressIndicator(color: AppTheme.primary),
-          );
-        }
-
-        if (ac.expertsList.isEmpty) {
-          return Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.people_outline_rounded,
-                  size: 64,
-                  color: AppTheme.textLight.withValues(alpha: 0.5),
-                ),
-                const SizedBox(height: 16),
-                const Text(
-                  'No experts available',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: AppTheme.textMedium,
-                  ),
-                ),
-              ],
-            ),
-          );
-        }
-
-        return RefreshIndicator(
-          onRefresh: () => ac.fetchExperts(isRefresh: true),
-          color: AppTheme.primary,
-          child: ListView.builder(
-            padding: EdgeInsets.only(
-              left: 16,
-              right: 16,
-              top: 12,
-              bottom: 12 + MediaQuery.of(context).padding.bottom,
-            ),
-            itemCount: ac.expertsList.length,
-            itemBuilder: (context, index) {
-              final expert = ac.expertsList[index];
-              return _buildExpertCard(context, expert);
-            },
-          ),
-        );
-      }),
-    );
-  }
-
-  Widget _buildExpertCard(BuildContext context, Expert expert) {
     return Container(
       margin: const EdgeInsets.only(bottom: 16),
       decoration: BoxDecoration(
@@ -197,7 +136,10 @@ class ExpertsScreen extends StatelessWidget {
                     runSpacing: 6,
                     children: expert.services.map((s) {
                       return Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 8,
+                          vertical: 4,
+                        ),
                         decoration: BoxDecoration(
                           color: AppTheme.cardBg,
                           borderRadius: BorderRadius.circular(6),
@@ -219,18 +161,18 @@ class ExpertsScreen extends StatelessWidget {
                     width: double.infinity,
                     height: 48,
                     child: ElevatedButton.icon(
-                      onPressed: () {
-                        showModalBottomSheet(
-                          context: context,
-                          isScrollControlled: true,
-                          backgroundColor: Colors.transparent,
-                          builder: (_) => BookingSheet(expert: expert),
-                        );
-                      },
-                      icon: const Icon(Icons.calendar_month_rounded, size: 16, color: Colors.white),
+                      onPressed: () => BookingSheet.show(context, expert),
+                      icon: const Icon(
+                        Icons.calendar_month_rounded,
+                        size: 16,
+                        color: Colors.white,
+                      ),
                       label: const Text(
                         'Book Appointment',
-                        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppTheme.primary,
