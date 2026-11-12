@@ -2,11 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'package:saris_cosmo_center/core/theme/app_theme.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:saris_cosmo_center/core/theme/app_theme.dart';
 import 'package:saris_cosmo_center/core/utils/app_snackbar.dart';
 import '../../models/enrollment_model.dart';
 import '../../controllers/enrollment_detail_controller.dart';
+
+// Modular Widgets
+import 'widgets/lesson_header.dart';
+import 'widgets/lesson_content_section.dart';
+import 'widgets/lesson_location_section.dart';
+import 'widgets/lesson_instructions_section.dart';
+import 'widgets/lesson_video_resource.dart';
+import 'widgets/lesson_bottom_action_bar.dart';
 
 class LessonDetailScreen extends StatefulWidget {
   final Map<String, dynamic> lesson;
@@ -135,34 +143,6 @@ class _LessonDetailScreenState extends State<LessonDetailScreen> {
     }
   }
 
-  String _formatClassType(String? type) {
-    if (type == null) return 'Class';
-    switch (type.toLowerCase()) {
-      case 'online_video':
-        return 'Online Video';
-      case 'offline_class':
-        return 'Offline Class';
-      case 'practical':
-        return 'Practical';
-      default:
-        return type.replaceAll('_', ' ').capitalizeFirst ?? type;
-    }
-  }
-
-  IconData _getClassTypeIcon(String? type) {
-    if (type == null) return Icons.class_outlined;
-    switch (type.toLowerCase()) {
-      case 'online_video':
-        return Icons.play_circle_outline_rounded;
-      case 'offline_class':
-        return Icons.school_outlined;
-      case 'practical':
-        return Icons.science_outlined;
-      default:
-        return Icons.book_outlined;
-    }
-  }
-
   Widget _buildDetailsBody(BuildContext context) {
     final hasProgress = widget.detailController.enrollment.value?.lessonProgress
         .firstWhereOrNull((p) => p.lessonId == _lessonId);
@@ -176,275 +156,39 @@ class _LessonDetailScreenState extends State<LessonDetailScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Header section inside details
-          Text(
-            _title,
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w800,
-              color: AppTheme.textDark,
-              height: 1.3,
-            ),
-          ),
-          const SizedBox(height: 12),
-
-          // Tags: Class type & duration & completion status
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            crossAxisAlignment: WrapCrossAlignment.center,
-            children: [
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                decoration: BoxDecoration(
-                  color: AppTheme.primary.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      _getClassTypeIcon(_classType),
-                      size: 14,
-                      color: AppTheme.primary,
-                    ),
-                    const SizedBox(width: 6),
-                    Text(
-                      _formatClassType(_classType),
-                      style: const TextStyle(
-                        fontSize: 11,
-                        fontWeight: FontWeight.w700,
-                        color: AppTheme.primary,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              if (_duration != null) ...[
-                const SizedBox(width: 8),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                  decoration: BoxDecoration(
-                    color: AppTheme.textMedium.withValues(alpha: 0.08),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Icon(
-                        Icons.access_time_rounded,
-                        size: 14,
-                        color: AppTheme.textMedium,
-                      ),
-                      const SizedBox(width: 6),
-                      Text(
-                        '$_duration mins',
-                        style: const TextStyle(
-                          fontSize: 11,
-                          fontWeight: FontWeight.w700,
-                          color: AppTheme.textMedium,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-              const SizedBox(width: 8),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                decoration: BoxDecoration(
-                  color: isCompleted
-                      ? Colors.green.shade50
-                      : isAttended
-                          ? Colors.blue.shade50
-                          : AppTheme.divider.withValues(alpha: 0.5),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Text(
-                  isCompleted
-                      ? 'Completed'
-                      : isAttended
-                          ? 'Attended'
-                          : 'Not Started',
-                  style: TextStyle(
-                    fontSize: 11,
-                    fontWeight: FontWeight.w700,
-                    color: isCompleted
-                        ? Colors.green.shade700
-                        : isAttended
-                            ? Colors.blue.shade700
-                            : AppTheme.textMedium,
-                  ),
-                ),
-              ),
-            ],
+          // Header with Title and Tags
+          LessonHeader(
+            title: _title,
+            classType: _classType,
+            duration: _duration,
+            isCompleted: isCompleted,
+            isAttended: isAttended,
           ),
           const SizedBox(height: 24),
 
           // Content description section
           if (_content != null && _content!.trim().isNotEmpty) ...[
-            const Text(
-              'Content Description',
-              style: TextStyle(
-                fontSize: 13,
-                color: AppTheme.textMedium,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 0.5,
-              ),
-            ),
-            const SizedBox(height: 8),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: AppTheme.surface,
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: AppTheme.divider.withValues(alpha: 0.8)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.02),
-                    blurRadius: 10,
-                    offset: const Offset(0, 4),
-                  )
-                ],
-              ),
-              child: Text(
-                _content!,
-                style: const TextStyle(
-                  fontSize: 14,
-                  height: 1.5,
-                  color: AppTheme.textDark,
-                ),
-              ),
-            ),
+            LessonContentSection(content: _content!),
             const SizedBox(height: 20),
           ],
 
           // Venue/Location Section
           if (_location != null && _location!.trim().isNotEmpty) ...[
-            const Text(
-              'Location / Venue',
-              style: TextStyle(
-                fontSize: 13,
-                color: AppTheme.textMedium,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 0.5,
-              ),
-            ),
-            const SizedBox(height: 8),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: AppTheme.surface,
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: AppTheme.divider.withValues(alpha: 0.8)),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Icon(Icons.location_on_rounded, size: 20, color: AppTheme.primary),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: Text(
-                      _location!,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                        color: AppTheme.textDark,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            LessonLocationSection(location: _location!),
             const SizedBox(height: 20),
           ],
 
           // Instructions Section
           if (_instructions != null && _instructions!.trim().isNotEmpty) ...[
-            const Text(
-              'Special Instructions',
-              style: TextStyle(
-                fontSize: 13,
-                color: AppTheme.textMedium,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 0.5,
-              ),
-            ),
-            const SizedBox(height: 8),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.amber.shade50.withValues(alpha: 0.3),
-                border: Border.all(color: Colors.amber.shade200),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Icon(Icons.info_outline_rounded, color: Colors.amber.shade900, size: 20),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: Text(
-                      _instructions!,
-                      style: TextStyle(
-                        fontSize: 13,
-                        height: 1.5,
-                        color: Colors.amber.shade900,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            LessonInstructionsSection(instructions: _instructions!),
             const SizedBox(height: 20),
           ],
 
           // Video Url if YouTube player wasn't loaded but URL is present
           if (_youtubeController == null && _videoUrl != null && _videoUrl!.trim().isNotEmpty) ...[
-            const Text(
-              'Video Resources',
-              style: TextStyle(
-                fontSize: 13,
-                color: AppTheme.textMedium,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 0.5,
-              ),
-            ),
-            const SizedBox(height: 8),
-            InkWell(
+            LessonVideoResource(
+              videoUrl: _videoUrl!,
               onTap: () => _launchUrl(_videoUrl!),
-              borderRadius: BorderRadius.circular(12),
-              child: Container(
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: Colors.blue.shade50.withValues(alpha: 0.5),
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.blue.shade200),
-                ),
-                child: Row(
-                  children: [
-                    Icon(Icons.play_circle_outline, color: Colors.blue.shade700, size: 22),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: Text(
-                        _videoUrl!,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: 13,
-                          decoration: TextDecoration.underline,
-                          color: Colors.blue.shade800,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
             ),
             const SizedBox(height: 20),
           ],
@@ -475,7 +219,12 @@ class _LessonDetailScreenState extends State<LessonDetailScreen> {
                   child: Obx(() => _buildDetailsBody(context)),
                 ),
               ),
-              _buildBottomActionBar(),
+              LessonBottomActionBar(
+                lessonId: _lessonId,
+                enrollment: widget.enrollment,
+                progress: widget.progress,
+                detailController: widget.detailController,
+              ),
             ],
           ),
         ),
@@ -541,92 +290,17 @@ class _LessonDetailScreenState extends State<LessonDetailScreen> {
                     child: Obx(() => _buildDetailsBody(context)),
                   ),
                 ),
-                _buildBottomActionBar(),
+                LessonBottomActionBar(
+                  lessonId: _lessonId,
+                  enrollment: widget.enrollment,
+                  progress: widget.progress,
+                  detailController: widget.detailController,
+                ),
               ],
             ),
           ),
         );
       },
-    );
-  }
-
-  Widget _buildBottomActionBar() {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-      decoration: const BoxDecoration(
-        color: AppTheme.surface,
-        border: Border(
-          top: BorderSide(color: AppTheme.divider),
-        ),
-      ),
-      child: Obx(() {
-        final isUpdating = widget.detailController.isUpdatingProgress.value;
-        final hasProgress = widget.detailController.enrollment.value?.lessonProgress
-            .firstWhereOrNull((p) => p.lessonId == _lessonId);
-        final status = (hasProgress?.status ?? widget.progress?.status ?? 'not_started').toLowerCase();
-        final isCompleted = status == 'completed';
-        final nextStatus = isCompleted ? 'not_started' : 'completed';
-
-        return Row(
-          children: [
-            Expanded(
-              child: OutlinedButton(
-                onPressed: isUpdating ? null : () => Navigator.pop(context),
-                style: OutlinedButton.styleFrom(
-                  foregroundColor: AppTheme.textMedium,
-                  side: const BorderSide(color: AppTheme.divider),
-                  padding: const EdgeInsets.symmetric(vertical: 14),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                ),
-                child: const Text(
-                  'Close',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-                ),
-              ),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: ElevatedButton.icon(
-                onPressed: isUpdating
-                    ? null
-                    : () async {
-                        await widget.detailController.updateProgress(
-                          widget.enrollment.id,
-                          _lessonId,
-                          nextStatus,
-                        );
-                      },
-                icon: isUpdating
-                    ? const SizedBox.shrink()
-                    : Icon(
-                        isCompleted ? Icons.undo_rounded : Icons.check_circle_outline_rounded,
-                        size: 18,
-                      ),
-                label: isUpdating
-                    ? const SizedBox(
-                        width: 18,
-                        height: 18,
-                        child: CircularProgressIndicator(
-                          strokeWidth: 2.5,
-                          color: Colors.white,
-                        ),
-                      )
-                    : Text(
-                        isCompleted ? 'Mark Incomplete' : 'Mark Complete',
-                        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-                      ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: isCompleted ? AppTheme.primary : AppTheme.success,
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(vertical: 14),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                  elevation: 0,
-                ),
-              ),
-            ),
-          ],
-        );
-      }),
     );
   }
 }
